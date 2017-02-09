@@ -35,8 +35,8 @@ public class AddressBookControllerTest {
     @Test
     public void getAddressBook() throws Exception {
         this.mockMvc.perform(put("/addressBook")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("\"id\":1")));
+                .andExpect(content().string(containsString("\"id\"")));
         this.mockMvc.perform(get("/addressBook?id=1")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("\"id\":1")));
+                .andExpect(content().string(containsString("\"id\"")));
     }
 }
