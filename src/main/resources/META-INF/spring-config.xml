@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mainPanel" class="MyJFrame" init-method="init">
+        <property name="title" value="persistence.AddressBook"/>
+        <property name="contentPane" ref="mainPane"/>
+    </bean>
+
+    <bean id="mainPane" class="MyJPanel" init-method="init">
+        <property name="axis" value="1"/>
+        <property name="panelComponents">
+            <list>
+                <ref bean="textField1"/>
+                <ref bean="textField2"/>
+                <ref bean="button"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="textField1" class="MyJTextField" init-method="init"/>
+
+    <bean id="textField2" class="MyJTextField" init-method="init"/>
+
+    <bean id="button" class="MyJButton" init-method="init">
+        <property name="actionListener" ref="actionListener"/>
+    </bean>
+
+    <bean id="actionListener" class="MyActionListener">
+        <constructor-arg ref="addressBook"/>
+        <constructor-arg ref="textField1"/>
+        <constructor-arg ref="textField2"/>
+    </bean>
+
+    <bean id="addressBook" class="persistence.AddressBook"/>
+
+</beans>
