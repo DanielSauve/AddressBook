@@ -46,11 +46,4 @@ public class WebController {
         model.addAttribute("addressBook", addressBook);
         return "addressBook";
     }
-
-    @PostMapping("addressBookGet")
-    public String addressBookGet(Model model){
-        AddressBook addressBook = addressBookRepository.findOne(1L);
-        model.addAttribute("addressBook", addressBook);
-        return "addressBook";
-    }
 }
