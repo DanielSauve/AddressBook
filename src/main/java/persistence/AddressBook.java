@@ -19,14 +19,6 @@ public class AddressBook {
         this.buddies = new ArrayList<BuddyInfo>();
     }
 
-    public static void main(String[] args) {
-        AddressBook addressBook = new AddressBook();
-        addressBook.addBuddy(new BuddyInfo("Charles", "555-555-5555"));
-        addressBook.addBuddy(new BuddyInfo("Chris", "444-444-4444"));
-        addressBook.addBuddy(new BuddyInfo("David", "333-333-3333"));
-        System.out.println(addressBook.toString());
-    }
-
     public List<BuddyInfo> getBuddies(){
         return buddies;
     }
